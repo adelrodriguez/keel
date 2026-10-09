@@ -1,6 +1,6 @@
 // Turns a copy of the keel template into a new library, then deletes itself.
 //
-// Usage: pnpm run init [--name <name>] [--description <text>] [--owner <github user>]
+// Usage: pnpm run init [--name <name>] [--emoji <emoji>] [--description <text>] [--owner <github user>]
 // Flags skip their prompts.
 
 import { readFileSync, rmSync, writeFileSync } from "node:fs"
@@ -16,6 +16,7 @@ const root = join(import.meta.dirname, "..")
 const { values: flags } = parseArgs({
   options: {
     description: { type: "string" },
+    emoji: { type: "string" },
     name: { type: "string" },
     owner: { type: "string" },
   },
@@ -32,6 +33,7 @@ async function ask(question: string, fallback?: string): Promise<string> {
 }
 
 const name = flags.name ?? (await ask("Package name"))
+const emoji = flags.emoji ?? (await ask("Emoji"))
 const description = flags.description ?? (await ask("Description"))
 const owner = flags.owner ?? (await ask("GitHub owner", TEMPLATE_OWNER))
 prompt.close()
@@ -69,9 +71,13 @@ rewrite("scripts/verify-build.ts", (contents) =>
 
 writeFileSync(
   join(root, "README.md"),
-  `# ${name}
+  `<div align="center">
+  <h1 align="center">${emoji} <code>${name}</code></h1>
 
-${description}
+  <p align="center">
+    <strong>${description}</strong>
+  </p>
+</div>
 
 ## Install
 
@@ -83,4 +89,6 @@ npm install ${name}
 
 rmSync(join(root, "scripts/init.ts"))
 
-console.info(`Initialized ${name}. Next: run scripts/setup-repo.sh after you push to GitHub.`)
+console.info(
+  `Initialized ${name}. After you push to GitHub, run scripts/setup-repo.sh and set the repository description to "${emoji} ${description}".`
+)
