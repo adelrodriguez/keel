@@ -1,12 +1,18 @@
-# keel
+<div align="center">
+  <h1 align="center">⚓️ <code>keel</code></h1>
 
-A template for TypeScript libraries: pnpm, tsdown, Adamantite, vitest, Changesets, and Packref.
+  <p align="center">
+    <strong>A template for TypeScript libraries</strong>
+  </p>
+</div>
+
+Keel starts a library with pnpm, tsdown, Adamantite, vitest, Changesets, and Packref already set up.
 
 ## Start a library
 
 1. Create a repository from this template on GitHub, then clone it.
 2. Run `pnpm install`.
-3. Run `pnpm run init`. It asks for the package name, description, and GitHub owner, rewrites the files that name the template, and deletes itself.
+3. Run `pnpm run init`. It asks for the package name, emoji, description, and GitHub owner, rewrites the files that name the template, and deletes itself.
 4. Replace the example in `src/` with your library.
 5. Push, then run `scripts/setup-repo.sh` to protect `main` and require every CI job.
 6. On npm, add this repository's `release.yml` workflow as a trusted publisher.
