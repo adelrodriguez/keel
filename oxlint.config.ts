@@ -28,7 +28,7 @@ export default defineConfig({
           {
             patterns: [
               {
-                group: ["#*.ts"],
+                group: ["#*.ts", "./*.ts"],
                 message: "An entry point must not import another entry point.",
               },
             ],
