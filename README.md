@@ -19,7 +19,7 @@ Keel starts a library with pnpm, tsdown, Adamantite, vitest, Changesets, and Pac
 
 ## Layout
 
-- `src/index.ts` exports the public API. Everything else stays internal.
+- Each file in the root of `src/` is a public entry point. `src/index.ts` is the main one; add each other root file to `entry` in `tsdown.config.ts` and to `exports` in `package.json`. Everything in `src/lib/` stays internal.
 - `src/lib/` holds the library logic in folders whose imports point one way. `oxlint.config.ts` enforces the direction with `no-restricted-imports`; give each new folder an override that lists the folders above it.
 - Code imports with `#` subpath imports, such as `#lib/shared/errors.ts`.
 - Tests sit in a `__tests__/` folder beside the file they test, with the same name. `src/__tests__/types.test-d.ts` tests the public types with `expectTypeOf`.
