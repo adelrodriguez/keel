@@ -20,6 +20,23 @@ export default defineConfig({
       },
     },
     {
+      // Each file in the root of `src` is a public entry point.
+      files: ["src/*.ts"],
+      rules: {
+        "no-restricted-imports": [
+          "error",
+          {
+            patterns: [
+              {
+                group: ["#*.ts"],
+                message: "An entry point must not import another entry point.",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
       files: ["src/lib/**/*.ts"],
       rules: {
         "no-restricted-imports": [
@@ -27,8 +44,8 @@ export default defineConfig({
           {
             patterns: [
               {
-                group: ["#index.ts"],
-                message: "lib must not import the public entry point.",
+                group: ["#*.ts"],
+                message: "lib must not import a public entry point.",
               },
             ],
           },
@@ -43,7 +60,7 @@ export default defineConfig({
           {
             patterns: [
               {
-                group: ["#index.ts", "#lib/greeting/**"],
+                group: ["#*.ts", "#lib/greeting/**"],
                 message: "shared must not import other lib folders.",
               },
             ],

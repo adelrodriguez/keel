@@ -5,6 +5,10 @@ Use ASD-STE100 Simplified Technical English for all communication.
 Before you explore or change code, read the relevant `GLOSSARY.md` files. Use the
 ubiquitous language in these files.
 
+## Coding standards
+
+Before you write or review code, read `CODING_STANDARDS.md`. It covers TypeScript style, the public API, imports and boundaries, errors, tests, comments, and commits.
+
 ## Agent skills
 
 ### Issue tracker
