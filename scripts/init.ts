@@ -69,13 +69,18 @@ rewrite("scripts/verify-build.ts", (contents) =>
     .replaceAll(`"${TEMPLATE_NAME}-build-`, `"${name}-build-`)
 )
 
+// The README header is an HTML block, where GitHub reads `<T>` as a tag even inside backticks.
+function escapeHtml(text: string) {
+  return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+}
+
 writeFileSync(
   join(root, "README.md"),
   `<div align="center">
-  <h1 align="center">${emoji} <code>${name}</code></h1>
+  <h1 align="center">${escapeHtml(emoji)} <code>${name}</code></h1>
 
   <p align="center">
-    <strong>${description}</strong>
+    <strong>${escapeHtml(description)}</strong>
   </p>
 </div>
 
