@@ -1,7 +1,5 @@
 # AGENTS.md
 
-Use ASD-STE100 Simplified Technical English for all communication.
-
 Before you explore or change code, read the relevant `GLOSSARY.md` files. Use the
 ubiquitous language in these files.
 
