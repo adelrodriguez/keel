@@ -1,0 +1,15 @@
+name: keel
+version: 1.0.0
+description: APM project for keel
+author: Adel Rodríguez
+targets: [claude, codex, opencode]
+
+dependencies:
+  apm:
+    - git: adelrodriguez/adamantite
+      skills: [adamantite]
+    - git: adelrodriguez/packref
+      skills: [packref]
+  mcp: []
+includes: auto
+scripts: {}

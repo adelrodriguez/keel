@@ -1,0 +1,132 @@
+lockfile_version: '1'
+apm_version: 0.34.0
+dependencies:
+- repo_url: adelrodriguez/adamantite
+  name: adamantite
+  host: github.com
+  resolved_commit: 8462266fcc4e1088a1dd3ecd657a17f24ca82b4e
+  version: unknown
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/adamantite
+  - .agents/skills/adamantite/SKILL.md
+  - .claude/skills/adamantite
+  - .claude/skills/adamantite/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/adamantite/SKILL.md: sha256:4775074e8580be53fe14f07cfcb035f8cb603dddee80b821198977ab715b648e
+    .claude/skills/adamantite/SKILL.md: sha256:4775074e8580be53fe14f07cfcb035f8cb603dddee80b821198977ab715b648e
+  content_hash: sha256:702bb61cdeae1b8fdee6f11dbf3173c931433f0b743cdd348eb2c0ee3ff44374
+  skill_subset:
+  - adamantite
+- repo_url: adelrodriguez/packref
+  name: packref
+  host: github.com
+  resolved_commit: 58df587d7c29227d4d52dc2753682df3757f3856
+  version: unknown
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/packref
+  - .agents/skills/packref/SKILL.md
+  - .agents/skills/packref/agents/openai.yaml
+  - .claude/skills/packref
+  - .claude/skills/packref/SKILL.md
+  - .claude/skills/packref/agents/openai.yaml
+  deployed_file_hashes:
+    .agents/skills/packref/SKILL.md: sha256:e73a6effb25dbabc9ee5a59d86b082a6c3f4340620d1eed4702782e1a8244fcf
+    .agents/skills/packref/agents/openai.yaml: sha256:037dca4320b37d563bc13dff56a0d7623709008177a6afec4e930711823fa9c6
+    .claude/skills/packref/SKILL.md: sha256:e73a6effb25dbabc9ee5a59d86b082a6c3f4340620d1eed4702782e1a8244fcf
+    .claude/skills/packref/agents/openai.yaml: sha256:037dca4320b37d563bc13dff56a0d7623709008177a6afec4e930711823fa9c6
+  content_hash: sha256:163884cf771fd13702a9eb710c137aa9a41a1920c3cb4fdf04d6edc6f2be2737
+  skill_subset:
+  - packref
+deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/skills/adamantite
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/adamantite
+  active_owner: adelrodriguez/adamantite
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/adamantite/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/adamantite
+  active_owner: adelrodriguez/adamantite
+  content_hash: sha256:4775074e8580be53fe14f07cfcb035f8cb603dddee80b821198977ab715b648e
+- kind: project-relative
+  target: claude
+  value: .claude/skills/packref
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/packref
+  active_owner: adelrodriguez/packref
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/packref/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/packref
+  active_owner: adelrodriguez/packref
+  content_hash: sha256:e73a6effb25dbabc9ee5a59d86b082a6c3f4340620d1eed4702782e1a8244fcf
+- kind: project-relative
+  target: claude
+  value: .claude/skills/packref/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/packref
+  active_owner: adelrodriguez/packref
+  content_hash: sha256:037dca4320b37d563bc13dff56a0d7623709008177a6afec4e930711823fa9c6
+- kind: project-relative
+  target: codex
+  value: .agents/skills/adamantite
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/adamantite
+  active_owner: adelrodriguez/adamantite
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/adamantite/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/adamantite
+  active_owner: adelrodriguez/adamantite
+  content_hash: sha256:4775074e8580be53fe14f07cfcb035f8cb603dddee80b821198977ab715b648e
+- kind: project-relative
+  target: codex
+  value: .agents/skills/packref
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/packref
+  active_owner: adelrodriguez/packref
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/packref/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/packref
+  active_owner: adelrodriguez/packref
+  content_hash: sha256:e73a6effb25dbabc9ee5a59d86b082a6c3f4340620d1eed4702782e1a8244fcf
+- kind: project-relative
+  target: codex
+  value: .agents/skills/packref/agents/openai.yaml
+  runtime: null
+  scope: project
+  owners:
+  - adelrodriguez/packref
+  active_owner: adelrodriguez/packref
+  content_hash: sha256:037dca4320b37d563bc13dff56a0d7623709008177a6afec4e930711823fa9c6
