@@ -1,0 +1,22 @@
+name: keel
+version: 0.1.0
+description: Agent skills for keel
+author: Adel Rodríguez
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, grok-bot, grok-build, hermes, kiro, opencode, vscode, windsurf
+targets:
+  - claude
+  - codex
+  - opencode
+dependencies:
+  apm:
+    - git: adelrodriguez/adamantite
+      skills:
+        - adamantite
+    - git: adelrodriguez/packref
+      skills:
+        - packref
+  mcp: []
+includes: auto
+scripts: {}
